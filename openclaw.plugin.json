@@ -1,0 +1,33 @@
+{
+  "id": "group-digest",
+  "name": "GroupDigest",
+  "description": "群聊智能摘要 + 待办提取 — 自动汇总群消息，提取 @你 的待办事项，生成每日/每周摘要报告",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "digestSchedule": {
+        "type": "string",
+        "description": "摘要生成频率: hourly / daily / weekly"
+      },
+      "maxMessages": {
+        "type": "number",
+        "description": "单次摘要最大处理消息数"
+      },
+      "todoKeywords": {
+        "type": "string",
+        "description": "待办关键词，逗号分隔（如：请,帮忙,麻烦,deadline,urgent）"
+      },
+      "outputFormat": {
+        "type": "string",
+        "description": "输出格式: markdown / text / json"
+      }
+    }
+  },
+  "uiHints": {
+    "digestSchedule": { "label": "摘要频率", "placeholder": "daily" },
+    "maxMessages": { "label": "最大消息数", "placeholder": "500" },
+    "todoKeywords": { "label": "待办关键词", "placeholder": "请,帮忙,麻烦,deadline" },
+    "outputFormat": { "label": "输出格式", "placeholder": "markdown" }
+  }
+}
