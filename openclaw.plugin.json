@@ -1,7 +1,7 @@
 {
   "id": "group-digest",
   "name": "GroupDigest",
-  "description": "群聊智能摘要 + 待办提取 — 自动汇总群消息，提取 @你 的待办事项，生成每日/每周摘要报告",
+  "description": "群聊智能摘要 + 待办提取 — 自动汇总群消息，提取 @你 的待办事项，支持飞书/企微/钉钉",
   "configSchema": {
     "type": "object",
     "additionalProperties": false,
@@ -21,6 +21,18 @@
       "outputFormat": {
         "type": "string",
         "description": "输出格式: markdown / text / json"
+      },
+      "feishuAppId": {
+        "type": "string",
+        "description": "飞书 App ID（用于直接从飞书 API 拉取群消息）"
+      },
+      "feishuAppSecret": {
+        "type": "string",
+        "description": "飞书 App Secret"
+      },
+      "feishuBotOpenId": {
+        "type": "string",
+        "description": "飞书机器人的 open_id（用于识别 @机器人 的消息）"
       }
     }
   },
@@ -28,6 +40,9 @@
     "digestSchedule": { "label": "摘要频率", "placeholder": "daily" },
     "maxMessages": { "label": "最大消息数", "placeholder": "500" },
     "todoKeywords": { "label": "待办关键词", "placeholder": "请,帮忙,麻烦,deadline" },
-    "outputFormat": { "label": "输出格式", "placeholder": "markdown" }
+    "outputFormat": { "label": "输出格式", "placeholder": "markdown" },
+    "feishuAppId": { "label": "飞书 App ID", "placeholder": "cli_xxxxx" },
+    "feishuAppSecret": { "label": "飞书 App Secret", "sensitive": true },
+    "feishuBotOpenId": { "label": "机器人 Open ID", "placeholder": "ou_xxxxx" }
   }
 }
